@@ -95,7 +95,7 @@ def create_hashtable(wordlist, hashtable):
                     converted_eta = time.strftime("%H:%M:%S", time.gmtime(eta))
                     print("ETA: "+str(converted_eta)+", Lines hashed: "+str(amount_hashed))
                 #adds hashes to specified file
-                hash = hashlib.md5().hexdigest()
+                hash = hashlib.md5(word).hexdigest()
                 with open(hashtable, 'a', encoding="utf-8") as f:
                     f.write(hash+":"+str(word.decode()))
                     f.write('\n')
