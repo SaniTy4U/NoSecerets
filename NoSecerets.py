@@ -134,7 +134,7 @@ def compare_hashes():
             compare_hashes()
         else:
             compare_hashes()
-    if option == "2":
+    elif option == "2":
         path_to_hashes = input("Path to hashes: ")
         if os.path.exists(path_to_hashes) == False:
             print("Hashes not found")
@@ -143,7 +143,7 @@ def compare_hashes():
             compare_hashes()
         else:
             compare_hashes()
-    if option == "3":
+    elif option == "3":
         if path_to_hashes == "NOT CONFIGURED":
             print("Please configure all options")
             time.sleep(2)
@@ -156,9 +156,10 @@ def compare_hashes():
         attack_process = multiprocessing.Process(target=attack, args=(path_to_hashtable, path_to_hashes))
         attack_process.start()
         attack_process.join()
-    print("Invalid option")
-    time.sleep(2)
-    compare_hashes()
+    else:
+        print("Invalid option")
+        time.sleep(2)
+        compare_hashes()
 
 def attack(path_to_hashtable, path_to_hashes):
     amount_hashed = 0
