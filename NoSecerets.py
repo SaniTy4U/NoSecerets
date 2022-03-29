@@ -246,13 +246,14 @@ def start():
     option = input("Input: ")
     if option == "1":
         configure_hashtable()
-    if option == "2":
+    elif option == "2":
         change_hashtype()
-    if option == "3":
+    elif option == "3":
         compare_hashes()
-    print("Invalid option")
-    time.sleep(1)
-    start()
+    else:
+        print("Invalid option")
+        time.sleep(1)
+        start()
 
 if __name__ == '__main__':
     start()
